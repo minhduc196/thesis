@@ -1,0 +1,83 @@
+{% load static %}
+<div class="container info">
+    <div class="row wrapper">
+        
+        <div class="dichvu col-md-3 col-sm-3">
+            <h4>Dịch vụ</h4>
+            <ul class="fa-ul">
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Financial Planning</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Investment Management</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Taxes Planing</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Insurance Consulting</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Retirement Strategies</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Business Loan</li>
+            </ul>
+        </div>
+        
+        <div class="sitemap col-md-2 col-sm-2">
+            <h4>Sitemap</h4> 
+            <ul class="fa-ul">
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Home</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> About us</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Services</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Projects</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> News</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Contact</li>
+            </ul>
+        </div>
+        
+        <div class="lienket col-md-2 col-sm-3">
+            <h4>Liên Kết</h4>
+            <ul class="fa-ul">
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> New Releases</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Comment Letters</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Member Alerts</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Newsletters</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Newsletter Updates</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Blog</li>
+            </ul>
+        </div>
+        
+        
+        <div class="aigoido col-md-5 col-sm-4">
+            <h4>AI GỌI ĐÓ</h4>
+            <ul class="fa-ul">
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Address: 10245 Malibu Point, Los Angeles, LA 2415 US</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Working time: Mon - Fri / 09:00 - 17: 00</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Hotline: 8 800 256 35 87</li>
+                <li><i class="fa fa-caret-right" aria-hidden="true"></i> Email: support@mcreagan-group.com</li>
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+                <li> <img src="{% static 'portal/images/bottom-logo.png' %}" alt="logo"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer class="container">
+    <p>&copy; 2016 Powered by IPComs Software, All Rights Reserved</p>
+</footer>
+<script src="{% static 'portal/js/intlTelInput.min.js' %}"></script>
+<script>
+    $("#phone").intlTelInput({
+        // allowDropdown: false,
+        // autoHideDialCode: false,
+        autoPlaceholder: "off",
+        // dropdownContainer: "body",
+        // excludeCountries: ["us"],
+        // formatOnDisplay: false,
+        // geoIpLookup: function(callback) {
+            //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+                //     var countryCode = (resp && resp.country) ? resp.country : "";
+                //     callback(countryCode);
+                //   });
+                // },
+                // initialCountry: "auto",
+                // nationalMode: false,
+                // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+                // placeholderNumberType: "MOBILE",
+                preferredCountries: ['vn', 'jp'],
+                separateDialCode: true,
+                utilsScript: "{% static 'portal/js/utils.js' %}"
+            });
+        </script>

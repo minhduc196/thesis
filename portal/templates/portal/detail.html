@@ -1,0 +1,211 @@
+{% extends 'layouts/master.html' %}
+{% load static %}
+{% load hitcount_tags %}
+{% block 'title' %} Phone Detail {% endblock %}
+{% block 'content' %}
+<div class="row coccoc wrapper">
+    <div id="main" class="col-md-9 col-sm-9">
+        <div class="row">
+            <div id="usrimg" class="col-md-4">
+                <div class="profile">
+                    <div class="img">
+                        <img src="{% static 'portal/images/Ellipse-1.png' %}">
+                    </div>
+                    <div class="img-name">
+                        <p>{{ phone.phonenum }}</p>
+                    </div>
+                </div>
+            </div>
+            <div id="info" class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                        <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                        <div class="text">
+                            <p id="p-number">{{ phone.phonenum }}</p>
+                            <p id="p-info">Số điện thoại | Viettel</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
+                        <div class="text">
+                            <p id="link">FACEBOOK</p>
+                            <p id="l-type">MXH | fb.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                        <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <div class="text">
+                            <p id="location">Vietnam</p>
+                            <p id="spec-location">Hanoi</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                        <div class="text">
+                            <p id="mail">test@domain.com</p>
+                            <p id="mail-type">Gmail</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="reportinfo" class="row">
+            <table>
+                <tr>
+                    <td>Trạng thái trung bình</td>
+                    <td>{{ phone.get_status_display }}</td>
+                </tr>
+                <tr>
+                    <td>Số lượt tìm kiếm</td>
+                    <td>{% get_hit_count for phone %}</td>
+                </tr>
+                <tr>
+                    <td>Số lượt bình luận</td>
+                    <td>{{ phone.report_set.count }}</td>
+                </tr>
+                <tr>
+                    <td>Kiểm tra lần cuối</td>
+                    <td>{{ phone.created_at }}</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="row">
+            <div id="binhluan" class="content">
+                <h4>BÌNH LUẬN</h4>
+                <table>
+                    <tr class="nguyhiem">
+                        <td><p>NGUY HIỂM</p></td>
+                        <td><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p></td>
+                    </tr>
+                    <tr class="quayray">
+                        <td><p>QUẤY RẦY</p></td>
+                        <td><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p></td>
+                    </tr>
+                    <tr class="khongxacdinh">
+                        <td><p>KHÔNG XÁC ĐỊNH</p></td>
+                        <td><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p></td>
+                    </tr>
+                    <tr class="antoan">
+                        <td><p>AN TOÀN</p></td>
+                        <td><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p></td>
+                    </tr>
+                    <tr class="binhthuong">
+                        <td><p>BÌNH THƯỜNG</p></td>
+                        <td><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p></td>
+                    </tr>
+                    <tr class="binhthuong">
+                        <td><p>BÌNH THƯỜNG</p></td>
+                        <td><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p></td>
+                    </tr>
+                    <tr class="antoan">
+                        <td><p>AN TOÀN</p></td>
+                        <td><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p></td>
+                    </tr>
+                    <tr class="khongxacdinh">
+                        <td><p>KHÔNG XÁC ĐỊNH</p></td>
+                        <td><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="ykien" class="row">
+            <form>
+                <div class="content"><h4>ĐÓNG GÓP CỦA BẠN VỀ THUÊ BAO NÀY</h4></div>
+                <div  class="col-md-4">
+                    
+                    <div class="nguyhiem select"><label>NGUY HIỂM<input type="checkbox" name="nh"></label></div>
+                    <div class="quayray select"><label>QUẤY RẦY<input type="checkbox" name="qr"></label></div>
+                    <div class="khongxacdinh select"><label>KHÔNG XÁC ĐỊNH<input type="checkbox" name="kxd"></label></div>
+                    <div class="binhthuong select"><label>BÌNH THƯỜNG<input type="checkbox" name="bt"></label></div>
+                    <div class="antoan select"><label>AN TOÀN<input type="checkbox" name="at"></label></div>
+                </div>
+                <div class="col-md-8">
+                    <textarea placeholder="Ý kiến của bạn"></textarea>
+                    <button type="submit" class="btn btn-default">GỬI</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="thuebaonguyhiem" class="content col-md-3 col-sm-3">
+        <h4>CÁC THUÊ BAO NGUY HIỂM</h4>
+        <table>
+            <tr>
+                <td>
+                    <p class="number">0123456789</p>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="number">0123456789</p>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="number">0123456789</p>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="number">0123456789</p>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="number">0123456789</p>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="number">0123456789</p>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="number">0123456789</p>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="number">0123456789</p>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="number">0123456789</p>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="number">0123456789</p>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="number">0123456789</p>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="number">0123456789</p>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<div class="row search">
+    <div class="col-md-3 col-sm-2">&nbsp;</div>
+    <div class="search-content col-md-6 col-sm-8">
+        <h3>FIND CONTACT INFORMATION<br>ON YOUR SELF OR ANYONE ELSE</h3>
+        <form method="post" action="{% url 'portal:search' %}">
+            {% csrf_token %}
+            <div class="input-group" style="border-radius: 0;">
+                <input id="phone" type="tel" class="form-control">
+                <span class="input-group-btn"><button id="search-submit" class="btn btn-default" type="submit">TÌM KIẾM</button></span>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3 col-sm-2">&nbsp;</div>
+</div>
